@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230209030601">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		function selectLanguage() {
+			const languageSelect = document.querySelector("#language-select");
+			const language = languageSelect.value;
+
+			//========================================================================================================================================================
+			//==================header======================================================================================================================================
+
+			const activeHeaderButton = document.querySelector(".active-header__button");
+			const menuItems = document.querySelectorAll(".menu__item");
+			const menuLinks = document.querySelectorAll(".menu__link");
+
+			//====================Масив или колекция слов====================================================================================================================================
+
+			const menuTextGerman = ["Hauptseite", "Hervorgehoben", "Service", "Preisgestaltung", "Kontakte", "Über uns"];
+			const menuTextEnglish = ["Homepage", "Highlighted", "Service", "Pricing", "Contacts", "About us"];
+			const menuTextSpanish = ["Página de inicio", "Destacado", "Servicio", "Precios", "Contactos", "Sobre nosotros"];
+
+			//===================footer=====================================================================================================================================
+
+			const topFooterButtonOne = document.querySelector(".top-footer__title_1");
+			const menuFooterItems = document.querySelectorAll(".menu-footer__item");
+			const menuFooterLinks = document.querySelectorAll(".menu-footer__link");
+			const topFooterButtonTwo = document.querySelector(".top-footer__title_2");
+			const bodyTopFooterItems = document.querySelectorAll(".body-top-footer__item");
+			const bodyTopFooterLinks = document.querySelectorAll(".body-top-footer__link");
+			const topFooterButtonThree = document.querySelector(".top-footer__title_3");
+			const informationTopFooterItems = document.querySelectorAll(".information-top-footer__item");
+			const informationTopFooterLinks = document.querySelectorAll(".information-top-footer__link");
+			const topFooterButtonFour = document.querySelector(".top-footer__title_4");
+			const appAndGoogleTopFooterItems = document.querySelectorAll(".app-and-google-top-footer__item");
+			const appAndGoogleTopFooterLinks = document.querySelectorAll(".app-and-google-top-footer__link");
+			const bottomFooterText = document.querySelector(".bottom-footer__text");
+			const blockTopFooterLabel = document.querySelector(".block-top-footer__label");
+
+			//====================Масив или колекция слов====================================================================================================================================
+
+			const menuFooterTextGerman = ["Hauptseite", "Gekennzeichnet", "Kreditkartenunterstützung"];
+			const menuFooterTextEnglish = ["Homepage", "Marked", "Credit card support"];
+			const menuFooterTextSpanish = ["Página de inicio", "Etiquetado", "Tarjeta de crédito"];
+			const bodyTopFooterTextGerman = ["Kostenlose Verwaltung", "Datensicher", "Kreditkartenunterstützung", "Unterstützung für Debitkarten"];
+			const bodyTopFooterTextEnglish = ["Free administration", "Data secure", "Credit card support", "Support for debit cards"];
+			const bodyTopFooterTextSpanish = ["Gestión gratuita", "Datos seguros", "Tarjeta de crédito", "Soporte para tarjetas de débito"];
+			const informationTopFooterTextGerman = ["Terms & amp; Bedingungen", "Datenschutz-Bestimmungen"];
+			const informationTopFooterTextEnglish = ["Terms & conditions", "Privacy policy"];
+			const informationTopFooterTextSpanish = ["Condiciones generales", "Política de privacidad"];
+			const appAndGoogleTopFooterTextGerman = ["App Store", "Google Play"];
+			const appAndGoogleTopFooterTextEnglish = ["App Store", "Google Play"];
+			const appAndGoogleTopFooterTextSpanish = ["App Store", "Google Play"];
+
+			//=================home=======================================================================================================================================
+
+			const leftHomeOneText = document.querySelector(".left-home-one__text");
+			const leftHomeOneButton = document.querySelector(".left-home-one__button");
+			const topKryptoplattformText = document.querySelector(".top-kryptoplattform__text");
+			const bottomKryptoplattformTitleOne = document.querySelector(".bottom-kryptoplattform__title_1");
+			const bottomKryptoplattformTitleTwo = document.querySelector(".bottom-kryptoplattform__title_2");
+			const bottomKryptoplattformTitleThree = document.querySelector(".bottom-kryptoplattform__title_3");
+			const bottomKryptoplattformTitleFour = document.querySelector(".bottom-kryptoplattform__title_4");
+			const bottomKryptoplattformTextOne = document.querySelector(".bottom-kryptoplattform__text_1");
+			const bottomKryptoplattformTextTwo = document.querySelector(".bottom-kryptoplattform__text_2");
+			const bottomKryptoplattformTextThree = document.querySelector(".bottom-kryptoplattform__text_3");
+			const bottomKryptoplattformTextFour = document.querySelector(".bottom-kryptoplattform__text_4");
+			const rightKaufenUndHaltenText = document.querySelector(".right-kaufen-und-halten__text");
+			const mehrInfoButtonOne = document.querySelector(".mehr-info-button-one");
+			const mehrInfoButtonTwo = document.querySelector(".mehr-info-button-two");
+			const mehrInfoButtonThree = document.querySelector(".mehr-info-button-three");
+			const mehrInfoButtonFour = document.querySelector(".mehr-info-button-four");
+			const expertenPageText = document.querySelector(".experten-page__text");
+			const rightMarktforschungPageText = document.querySelector(".right-marktforschung-page__text");
+			const millionPageText = document.querySelector(".million-page__text");
+			const rightAbonnierenPageText = document.querySelector(".right-abonnieren-page__text");
+			const formRightAbonnierenPageButton = document.querySelector(".form-right-abonnieren-page__button");
+
+			//========================================================================================================================================================
+			//========================================================================================================================================================
+
+
+			let menuText;
+			let menuFooterText;
+			let bodyTopFooterText;
+			let informationTopFooterText;
+			let appAndGoogleTopFooterText;
+
+			if (language === "Ger") {
+				activeHeaderButton.textContent = "Anmeldung";
+				menuText = menuTextGerman;
+
+				document.querySelector('.left-home-one__title').innerHTML = 'Machen Sie das <span>Beste</span> aus den Marktbewegungen';
+				leftHomeOneText.textContent = "Nutzen Sie eine breite Palette von Anlagemöglichkeiten, benutzerfreundlichen Handelsinstrumenten und Markteinblicken, die Ihnen bei der Umsetzung Ihrer Handelsstrategien helfen. Verdienen Sie Zinsen auf der Grundlage Ihres Kontoplans, ohne Sperrfrist.";
+				leftHomeOneButton.textContent = "Loslegen";
+				document.querySelector('.vorgestellt-page__title').innerHTML = '<span>Vorgestellt</span> auf';
+				document.querySelector('.top-kryptoplattform__title').innerHTML = 'Vertrauenswürdige <span>Kryptoplattform</span> für Verkauf, Kauf und Handel';
+				topKryptoplattformText.textContent = "CEX.io ist eine der besten Plattformen für den Austausch von Kryptowährungen. Es hat die schnellsten 0 Transaktionsgebühren, Datensicherheit, Unterstützung beim Kauf von Krypto mit Kredit- oder Debitkarte und andere Vorteile.";
+				bottomKryptoplattformTitleOne.textContent = "Selbstverwaltetes Handeln & Investieren";
+				bottomKryptoplattformTitleTwo.textContent = "Vermögensverwaltung";
+				bottomKryptoplattformTitleThree.textContent = "Intuitive Handelswerkzeuge";
+				bottomKryptoplattformTitleFour.textContent = "Expertenwissen";
+				bottomKryptoplattformTextOne.textContent = "Alles, was Sie für die Verwaltung Ihrer eigenen Anlagen benötigen";
+				bottomKryptoplattformTextTwo.textContent = "Kostengünstige, kompetente Verwaltung Ihrer Fonds, ohne Bindung";
+				bottomKryptoplattformTextThree.textContent = "Anlageplattformen für unterschiedliche Bedürfnisse und Erfahrungsstufen";
+				bottomKryptoplattformTextFour.textContent = "Marktforschung auf der Plattform, Lernressourcen und mehr";
+				document.querySelector('.right-kaufen-und-halten__title').innerHTML = '<span>Kaufen</span> und halten oder mit Hebelwirkung handeln';
+				rightKaufenUndHaltenText.textContent = "Wählen Sie aus einer breiten Palette von Produkten für den Cash- und Margin-Handel auf den globalen Märkten. Was auch immer Sie handeln, Sie erhalten das, was Sie brauchen, um mit fortschrittlichen Tools, Handelsinspiration und Marktforschung sichere Entscheidungen zu treffen.";
+				mehrInfoButtonOne.textContent = "Mehr Info";
+				mehrInfoButtonTwo.textContent = "Mehr Info";
+				mehrInfoButtonThree.textContent = "Mehr Info";
+				mehrInfoButtonFour.textContent = "Mehr Info";
+				document.querySelector('.experten-page__title').innerHTML = 'Lassen Sie die <span>Experten</span> für Sie handeln';
+				expertenPageText.textContent = "Lassen Sie Ihre Ersparnisse mit unserem neuen Service auf Ihre Lebensziele abstimmen oder investieren Sie in exklusive verwaltete Portfolios von weltweit führenden Vermögensverwaltern. Sie können auch einen regelmäßigen Sparplan für bestimmte verwaltete Portfolios ab SGD 100 pro Monat einrichten.";
+				document.querySelector('.right-marktforschung-page__title').innerHTML = 'Schärfen Sie Ihre Strategie mit kuratierter <span>Marktforschung</span>';
+				rightMarktforschungPageText.textContent = "Möchten Sie schnell den Puls eines Marktes fühlen oder ESG-fokussierte Investitionen recherchieren? Von Live-Markt-Updates bis hin zu detaillierten Makro-Analysen - Ihr Saxo-Konto bietet Ihnen Zugang zu aussagekräftigen Erkenntnissen, direkt auf Ihrer Handelsplattform.";
+				document.querySelector('.million-page__title').innerHTML = 'Was unsere <span>Million</span> Smart User sagt';
+				millionPageText.textContent = "Mehr als eine Million Benutzer vertrauen darauf, dass wir die Kryptowährungen in Bitcoin.de verkaufen, kaufen und handeln";
+				document.querySelector('.right-abonnieren-page__title').innerHTML = '<span>Abonnieren</span> Sie uns';
+				rightAbonnierenPageText.textContent = "Lörem ipsum befyrade ortad. Geott suhet och av. Bibiling. Ement megan oda. Bask reatyp multill.";
+				formRightAbonnierenPageButton.textContent = "Weitermachen";
+
+				blockTopFooterLabel.textContent = "CEX.io ist der beste Ort, um etwas über Krypto zu lernen.";
+				topFooterButtonOne.textContent = "Menu";
+				menuFooterText = menuFooterTextGerman;
+				topFooterButtonTwo.textContent = "Dienstleistungen";
+				bodyTopFooterText = bodyTopFooterTextGerman;
+				topFooterButtonThree.textContent = "Weitere Informationen";
+				informationTopFooterText = informationTopFooterTextGerman;
+				topFooterButtonFour.textContent = "Die App holen";
+				appAndGoogleTopFooterText = appAndGoogleTopFooterTextGerman;
+				bottomFooterText.textContent = "Urheberrecht © 2021 Crypto.qu. Alle Rechte vorbehalten.";
+
+			} else if (language === "Spa") {
+				activeHeaderButton.textContent = "Inscripción";
+				menuText = menuTextSpanish;
+
+				document.querySelector('.left-home-one__title').innerHTML = 'Aprovechar los <span>movimientos</span> del mercado';
+				leftHomeOneText.textContent = "Benefíciese de una amplia gama de opciones de inversión, herramientas de negociación de fácil uso y perspectivas de mercado que le ayudarán a aplicar sus estrategias de negociación. Gane intereses en función de su plan de cuenta, sin periodo de bloqueo.";
+				leftHomeOneButton.textContent = "En marcha";
+				document.querySelector('.vorgestellt-page__title').innerHTML = '<span>Presentado</span> el';
+				document.querySelector('.top-kryptoplattform__title').innerHTML = 'Plataforma <span>criptográfica</span> de confianza para vender, comprar y negociar';
+				topKryptoplattformText.textContent = "CEX.io es una de las mejores plataformas para el intercambio de criptomonedas. Tiene las tarifas de transacción más rápidas 0, seguridad de datos, soporte para comprar cripto con tarjeta de crédito o débito y otras ventajas.";
+				bottomKryptoplattformTitleOne.textContent = "Acción e inversión autogestionadas";
+				bottomKryptoplattformTitleTwo.textContent = "Gestión de activos";
+				bottomKryptoplattformTitleThree.textContent = "Herramientas de negociación intuitivas";
+				bottomKryptoplattformTitleFour.textContent = "Conocimientos especializados";
+				bottomKryptoplattformTextOne.textContent = "Todo lo que necesita para gestionar su propio patrimonio";
+				bottomKryptoplattformTextTwo.textContent = "Gestión rentable y competente de sus fondos, sin compromisos";
+				bottomKryptoplattformTextThree.textContent = "Plataformas de inversión para diferentes necesidades y niveles de experiencia";
+				bottomKryptoplattformTextFour.textContent = "Estudios de mercado sobre la plataforma, recursos de aprendizaje y mucho más";
+				document.querySelector('.right-kaufen-und-halten__title').innerHTML = '<span>Comprar</span> y mantener o negociar con apalancamiento';
+				rightKaufenUndHaltenText.textContent = "Elija entre una amplia gama de productos para operar al contado y con margen en los mercados mundiales. Independientemente de lo que opere, obtendrá lo que necesita para tomar decisiones seguras con herramientas avanzadas, inspiración para operar y estudios de mercado.";
+				mehrInfoButtonOne.textContent = "Más información";
+				mehrInfoButtonTwo.textContent = "Más información";
+				mehrInfoButtonThree.textContent = "Más información";
+				mehrInfoButtonFour.textContent = "Más información";
+				document.querySelector('.experten-page__title').innerHTML = 'Deje que los <span>expertos</span> lo hagan por usted';
+				expertenPageText.textContent = "Haga que sus ahorros se ajusten a sus objetivos vitales con nuestro nuevo servicio o invierta en carteras gestionadas exclusivas de los principales gestores de activos del mundo. También puede establecer un plan de ahorro regular para carteras gestionadas específicas a partir de 100 SGD al mes.";
+				document.querySelector('.right-marktforschung-page__title').innerHTML = 'Perfeccione su estrategia con estudios de mercado <span>específicos</span>';
+				rightMarktforschungPageText.textContent = "¿Quiere tomar rápidamente el pulso a un mercado o investigar inversiones centradas en ASG? Desde actualizaciones en directo de los mercados hasta análisis macroeconómicos exhaustivos, su cuenta Saxo le ofrece acceso a información significativa directamente desde su plataforma de negociación.";
+				document.querySelector('.million-page__title').innerHTML = 'Lo que dicen nuestro <span>millón</span> de usuarios';
+				millionPageText.textContent = "Más de un millón de usuarios confían en nosotros para vender, comprar e intercambiar criptomonedas en Bitcoin.de. comprar y comerciar";
+				document.querySelector('.right-abonnieren-page__title').innerHTML = '<span>Suscrí</span>base';
+				rightAbonnierenPageText.textContent = "Lörem ipsum befyrade ortad. Geott suhet y de. Bibiling. Ement megan oda. Bask reatyp multill. ";
+				formRightAbonnierenPageButton.textContent = "Continúe en";
+
+				blockTopFooterLabel.textContent = "CEX.io es el mejor lugar para aprender sobre criptomonedas.";
+				topFooterButtonOne.textContent = "Menú";
+				menuFooterText = menuFooterTextSpanish;
+				topFooterButtonTwo.textContent = "Servicios";
+				bodyTopFooterText = bodyTopFooterTextSpanish;
+				topFooterButtonThree.textContent = "Para más información";
+				informationTopFooterText = informationTopFooterTextSpanish;
+				topFooterButtonFour.textContent = "Obtener la aplicación";
+				appAndGoogleTopFooterText = appAndGoogleTopFooterTextSpanish;
+				bottomFooterText.textContent = "Derechos de autor © 2021 Crypto.qu. Todos los derechos reservados.";
+
+			} else if (language === "Eng") {
+				activeHeaderButton.textContent = "Login";
+				menuText = menuTextEnglish;
+
+				document.querySelector('.left-home-one__title').innerHTML = 'Make the <span>most</span> of market movements';
+				leftHomeOneText.textContent = "Take advantage of a wide range of investment options, user-friendly trading tools and market insights to help you implement your trading strategies. Earn interest based on your account plan, with no lock-in period.";
+				leftHomeOneButton.textContent = "Get started";
+				document.querySelector('.vorgestellt-page__title').innerHTML = '<span>Presented</span> on';
+				document.querySelector('.top-kryptoplattform__title').innerHTML = 'Trusted <span>crypto</span> platform for selling, buying and trading';
+				topKryptoplattformText.textContent = "CEX.io is one of the best platforms for cryptocurrency exchange. It has the fastest 0 transaction fees, data security, support for buying crypto with credit or debit card and other advantages.";
+				bottomKryptoplattformTitleOne.textContent = "Self-managed action & investment";
+				bottomKryptoplattformTitleTwo.textContent = "Asset Management";
+				bottomKryptoplattformTitleThree.textContent = "Intuitive trading tools";
+				bottomKryptoplattformTitleFour.textContent = "Expert knowledge";
+				bottomKryptoplattformTextOne.textContent = "Everything you need to manage your own assets";
+				bottomKryptoplattformTextTwo.textContent = "Cost-effective, competent management of your funds, without commitment";
+				bottomKryptoplattformTextThree.textContent = "Investment platforms for different needs and experience levels";
+				bottomKryptoplattformTextFour.textContent = "Market research on the platform, learning resources and more";
+				document.querySelector('.right-kaufen-und-halten__title').innerHTML = '<span>Buy</span> and hold or trade with leverage';
+				rightKaufenUndHaltenText.textContent = "Choose from a wide range of products for cash and margin trading on global markets. Whatever you trade, you get what you need to make confident decisions with advanced tools, trading inspiration and market research.";
+				mehrInfoButtonOne.textContent = "More info";
+				mehrInfoButtonTwo.textContent = "More info";
+				mehrInfoButtonThree.textContent = "More info";
+				mehrInfoButtonFour.textContent = "More info";
+				document.querySelector('.experten-page__title').innerHTML = 'Let the <span>experts</span> do it for you';
+				expertenPageText.textContent = "Have your savings matched to your life goals with our new service or invest in exclusive managed portfolios from the world's leading asset managers. You can also set up a regular savings plan for specific managed portfolios starting at SGD 100 per month.";
+				document.querySelector('.right-marktforschung-page__title').innerHTML = 'Sharpen your strategy with curated market <span>research</span>';
+				rightMarktforschungPageText.textContent = "Want to quickly take the pulse of a market or research ESG-focused investments? From live market updates to in-depth macro analysis, your Saxo account gives you access to meaningful insights, right on your trading platform.";
+				document.querySelector('.million-page__title').innerHTML = 'What our <span>million</span> smart users say';
+				millionPageText.textContent = "More than a million users trust us to sell, buy and trade cryptocurrencies in Bitcoin.de";
+				document.querySelector('.right-abonnieren-page__title').innerHTML = '<span>Subscribe</span> to us';
+				rightAbonnierenPageText.textContent = "Lörem ipsum befyrade ortad. Geott suhet and of. Bibiling. Ement megan oda. Bask reatyp multill. ";
+				formRightAbonnierenPageButton.textContent = "Continue";
+
+				blockTopFooterLabel.textContent = "CEX.io is the best place to learn about crypto.";
+				topFooterButtonOne.textContent = "Menu";
+				menuFooterText = menuFooterTextEnglish;
+				topFooterButtonTwo.textContent = "Services";
+				bodyTopFooterText = bodyTopFooterTextEnglish;
+				topFooterButtonThree.textContent = "More information";
+				informationTopFooterText = informationTopFooterTextEnglish;
+				topFooterButtonFour.textContent = "Get the app";
+				appAndGoogleTopFooterText = appAndGoogleTopFooterTextEnglish;
+				bottomFooterText.textContent = "Copyright © 2021 Crypto.qu. All Rights Reserved.";
+
+			}
+			for (let i = 0; i < menuItems.length; i++) {
+				menuLinks[i].textContent = menuText[i];
+			}
+			for (let i = 0; i < menuFooterItems.length; i++) {
+				menuFooterLinks[i].textContent = menuFooterText[i];
+			}
+			for (let i = 0; i < bodyTopFooterItems.length; i++) {
+				bodyTopFooterLinks[i].textContent = bodyTopFooterText[i];
+			}
+			for (let i = 0; i < informationTopFooterItems.length; i++) {
+				informationTopFooterLinks[i].textContent = informationTopFooterText[i];
+			}
+			for (let i = 0; i < appAndGoogleTopFooterItems.length; i++) {
+				appAndGoogleTopFooterLinks[i].textContent = appAndGoogleTopFooterText[i];
+			}
+		}
+		document.addEventListener("DOMContentLoaded", function() {
+			selectLanguage();
+		});
+		document.addEventListener("selectCallback", function(e) {
+			selectLanguage();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-lp class="header">
+			<div class="header__container">
+				<div class="header__logo-block">
+					<a href="" class="header__logo"><img src="img/logo-cex-io.svg" alt="logo cex io"></a>
+				</div>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" class="menu__link"></a></li>
+							<li class="menu__item"><a href="#" class="menu__link"></a></li>
+							<li class="menu__item"><a href="#" class="menu__link"></a></li>
+							<li class="menu__item"><a href="#" class="menu__link"></a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__active active-header">
+					<div data-da=".menu__body, 767.98" class="active-header__block">
+						<div class="active-header__list">
+							<select data-scroll id="language-select" class="active-header__language-select" onchange="selectLanguage()" data-class-modif="test">
+								<option value="Ger" selected>Ger</option>
+								<option value="Spa">Spa</option>
+								<option value="Eng">Eng</option>
+							</select>
+						</div>
+						<button data-ripple type="button" class="active-header__button button-border"></button>
+					</div>
+					<div class="active-header__burger">
+						<button type="button" class="icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__home-one home-one">
+				<div class="home-one__container">
+					<div class="home-one__left left-home-one">
+						<div class="left-home-one__content">
+							<h1 class="left-home-one__title"></h1>
+							<p class="left-home-one__text"></p>
+						</div>
+						<button class="left-home-one__button button"></button>
+					</div>
+					<div class="home-one__right right-home-one">
+						<div class="right-home-one__bitcoin bitcoin-right-home-one">
+							<div class="bitcoin-right-home-one__item">
+								<div class="bitcoin-right-home-one__body">
+									<h4 class="bitcoin-right-home-one__headline">Bitcoin</h4>
+									<div class="bitcoin-right-home-one__image-ibg"><img data-src="img/icon/logos_bitcoin.svg" alt="bitcoin"></div>
+								</div>
+								<div class="bitcoin-right-home-one__price">$53.863,9</div>
+							</div>
+							<div class="bitcoin-right-home-one__item">
+								<div class="bitcoin-right-home-one__graphic-ibg"><img data-src="img/home-one/graphic-1.svg" alt="graphic"></div>
+							</div>
+							<div class="bitcoin-right-home-one__item">
+								<div class="bitcoin-right-home-one__percent">-2,5%</div>
+							</div>
+						</div>
+						<div class="right-home-one__binance binance-right-home-one">
+							<div class="binance-right-home-one__body">
+								<h4 class="binance-right-home-one__headline">Binance Coin</h4>
+								<div class="binance-right-home-one__image-ibg"><img data-src="img/icon/binance-coin-bnb.svg" alt="binance"></div>
+							</div>
+							<div class="binance-right-home-one__price">$282,63</div>
+						</div>
+						<div class="right-home-one__ethereum ethereum-right-home-one">
+							<div class="ethereum-right-home-one__item">
+								<div class="ethereum-right-home-one__body">
+									<h4 class="ethereum-right-home-one__headline">Ethereum</h4>
+									<div class="ethereum-right-home-one__image-ibg"><img data-src="img/icon/ethereum-eth-logo.svg" alt="ethereum"></div>
+								</div>
+								<div class="ethereum-right-home-one__price">$1.812,56</div>
+							</div>
+							<div class="ethereum-right-home-one__item">
+								<div class="ethereum-right-home-one__percent">+0,8%</div>
+							</div>
+						</div>
+						<div class="right-home-one__image-ibg"><img data-src="img/home-one/picture.svg" alt="image"></div>
+					</div>
+				</div>
+			</section>
+			<section class="page__vorgestellt vorgestellt-page">
+				<div class="vorgestellt-page__container">
+					<div class="vorgestellt-page__body">
+						<h2 class="vorgestellt-page__title title"></h2>
+					</div>
+					<ul class="vorgestellt-page__list">
+						<li class="vorgestellt-page__item"><a href="#" class="vorgestellt-page__link-ibg"><img data-src="img/vorgestellt-page/coindesk.svg" alt="brand"></a></li>
+						<li class="vorgestellt-page__item"><a href="#" class="vorgestellt-page__link-ibg"><img data-src="img/vorgestellt-page/cointelegraph.svg" alt="brand"></a></li>
+						<li class="vorgestellt-page__item"><a href="#" class="vorgestellt-page__link-ibg"><img data-src="img/vorgestellt-page/reuters.svg" alt="brand"></a></li>
+						<li class="vorgestellt-page__item"><a href="#" class="vorgestellt-page__link-ibg"><img data-src="img/vorgestellt-page/cointracker.svg" alt="brand"></a></li>
+					</ul>
+				</div>
+			</section>
+			<section class="page__kryptoplattform kryptoplattform-page">
+				<div class="kryptoplattform-page__container">
+					<div class="kryptoplattform-page__top top-kryptoplattform">
+						<h2 class="top-kryptoplattform__title title"></h2>
+						<p class="top-kryptoplattform__text"></p>
+					</div>
+					<div class="kryptoplattform-page__bottom bottom-kryptoplattform">
+						<article class="bottom-kryptoplattform__item">
+							<div class="bottom-kryptoplattform__image-block">
+								<div class="bottom-kryptoplattform__image-ibg"><img data-src="img/kryptoplattform-page/image-1.svg" alt="image"></div>
+							</div>
+							<a href="#" class="bottom-kryptoplattform__title bottom-kryptoplattform__title_1"></a>
+							<p class="bottom-kryptoplattform__text bottom-kryptoplattform__text_1"></p>
+						</article>
+						<article class="bottom-kryptoplattform__item">
+							<div class="bottom-kryptoplattform__image-block">
+								<div class="bottom-kryptoplattform__image-ibg"><img data-src="img/kryptoplattform-page/image-2.svg" alt="image"></div>
+							</div>
+							<a href="#" class="bottom-kryptoplattform__title bottom-kryptoplattform__title_2"></a>
+							<p class="bottom-kryptoplattform__text bottom-kryptoplattform__text_2"></p>
+						</article>
+						<article class="bottom-kryptoplattform__item">
+							<div class="bottom-kryptoplattform__image-block">
+								<div class="bottom-kryptoplattform__image-ibg"><img data-src="img/kryptoplattform-page/image-3.svg" alt="image"></div>
+							</div>
+							<a href="#" class="bottom-kryptoplattform__title bottom-kryptoplattform__title_3"></a>
+							<p class="bottom-kryptoplattform__text bottom-kryptoplattform__text_3"></p>
+						</article>
+						<article class="bottom-kryptoplattform__item">
+							<div class="bottom-kryptoplattform__image-block">
+								<div class="bottom-kryptoplattform__image-ibg"><img data-src="img/kryptoplattform-page/image-4.svg" alt="image"></div>
+							</div>
+							<a href="#" class="bottom-kryptoplattform__title bottom-kryptoplattform__title_4"></a>
+							<p class="bottom-kryptoplattform__text bottom-kryptoplattform__text_4"></p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__kaufen-und-halten kaufen-und-halten">
+				<div class="kaufen-und-halten__container">
+					<div class="kaufen-und-halten__left">
+						<article class="kaufen-und-halten__item item-kaufen-und-halten">
+							<div class="item-kaufen-und-halten__left">
+								<a href="#" class="item-kaufen-und-halten__body">
+									<h4 class="item-kaufen-und-halten__headline">Bitcoin</h4>
+									<div class="item-kaufen-und-halten__image-ibg"><img data-src="img/icon/logos_bitcoin.svg" alt="image"></div>
+								</a>
+								<div class="item-kaufen-und-halten__price">$53.863,</div>
+								<div class="item-kaufen-und-halten__percent item-kaufen-und-halten__percent_green">+2,5%</div>
+							</div>
+							<div class="item-kaufen-und-halten__right">
+								<div class="item-kaufen-und-halten__graphics-ibg"><img data-src="img/kaufen-und-halten/graphics-1.svg" alt="image"></div>
+							</div>
+						</article>
+						<article class="kaufen-und-halten__item item-kaufen-und-halten">
+							<div class="item-kaufen-und-halten__left">
+								<a href="#" class="item-kaufen-und-halten__body">
+									<h4 class="item-kaufen-und-halten__headline">Dogecoin</h4>
+									<div class="item-kaufen-und-halten__image-ibg"><picture><source data-srcset="img/icon/dogecoin-doge-logo.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/icon/dogecoin-doge-logo.png" alt="image"></picture></div>
+								</a>
+								<div class="item-kaufen-und-halten__price">$0,056</div>
+								<div class="item-kaufen-und-halten__percent item-kaufen-und-halten__percent_red">-0,3%</div>
+							</div>
+							<div class="item-kaufen-und-halten__right">
+								<div class="item-kaufen-und-halten__graphics-ibg"><img data-src="img/kaufen-und-halten/graphics-2.svg" alt="image"></div>
+							</div>
+						</article>
+						<article class="kaufen-und-halten__item item-kaufen-und-halten">
+							<div class="item-kaufen-und-halten__left">
+								<a href="#" class="item-kaufen-und-halten__body">
+									<h4 class="item-kaufen-und-halten__headline">Bitcoin</h4>
+								</a>
+								<div class="item-kaufen-und-halten__price">$53.863,9</div>
+								<div class="item-kaufen-und-halten__percent item-kaufen-und-halten__percent_green">+2,5%</div>
+							</div>
+							<div class="item-kaufen-und-halten__right">
+								<div class="item-kaufen-und-halten__graphics-ibg"><img data-src="img/kaufen-und-halten/graphics-1.svg" alt="image"></div>
+							</div>
+						</article>
+						<article class="kaufen-und-halten__item item-kaufen-und-halten">
+							<div class="item-kaufen-und-halten__left">
+								<a href="#" class="item-kaufen-und-halten__body">
+									<h4 class="item-kaufen-und-halten__headline">Binance Coin</h4>
+									<div class="item-kaufen-und-halten__image-ibg"><img data-src="img/icon/binance-coin-bnb.svg" alt="image"></div>
+								</a>
+								<div class="item-kaufen-und-halten__price">$282,36</div>
+								<div class="item-kaufen-und-halten__percent item-kaufen-und-halten__percent_green">+0,8%</div>
+							</div>
+							<div class="item-kaufen-und-halten__right">
+								<div class="item-kaufen-und-halten__graphics-ibg"><img data-src="img/kaufen-und-halten/graphics-3.svg" alt="image"></div>
+							</div>
+						</article>
+					</div>
+					<div class="kaufen-und-halten__right right-kaufen-und-halten">
+						<div class="right-kaufen-und-halten__body">
+							<h2 class="right-kaufen-und-halten__title title"></h2>
+							<p class="right-kaufen-und-halten__text"></p>
+						</div>
+						<button class="right-kaufen-und-halten__button mehr-info-button-one button"></button>
+					</div>
+				</div>
+			</section>
+			<section class="page__experten experten-page">
+				<div class="experten-page__container">
+					<div class="experten-page__left">
+						<div class="experten-page__body">
+							<h2 class="experten-page__title title"></h2>
+							<p class="experten-page__text"></p>
+						</div>
+						<button class="experten-page__button mehr-info-button-two button"></button>
+					</div>
+					<div class="experten-page__right">
+						<div class="experten-page__image-ibg"><img data-src="img/experten-page/picture.svg" alt="image">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__marktforschung marktforschung-page">
+				<div class="marktforschung-page__container">
+					<div class="marktforschung-page__left">
+						<div class="marktforschung-page__image-ibg"><img data-src="img/marktforschung-page/picture.svg" alt="image"></div>
+					</div>
+					<div class="marktforschung-page__right right-marktforschung-page">
+						<div class="right-marktforschung-page__body">
+							<h2 class="right-marktforschung-page__title title"></h2>
+							<p class="right-marktforschung-page__text"></p>
+						</div>
+						<button class="right-marktforschung-page__button mehr-info-button-three button"></button>
+					</div>
+				</div>
+			</section>
+			<section class="page__million million-page">
+				<div class="million-page__container">
+					<div class="million-page__top">
+						<h2 class="million-page__title title"></h2>
+						<p class="million-page__text"></p>
+					</div>
+					<div class="million-page__content content-million-page">
+						<article class="content-million-page__item">
+							<a href="#" class="content-million-page__block-link">
+								<div class="content-million-page__image-ibg"><picture><source data-srcset="img/million-page/avatar-1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/million-page/avatar-1.png" alt="image"></picture></div>
+								<h3 class="content-million-page__headline content-million-page__headline_1">Harry Potter</h3>
+							</a>
+							<p class="content-million-page__text">„Das ist wirklich etwas für Millennials. Nicht kompliziert,
+								informativ, aber sauber. Fluid ist auch ein Übergang. Der Investmentmanager tut viel. Jetzt nur
+								noch Avrist, Pinnacle, Simas, Majoris.“</p>
+						</article>
+						<article class="content-million-page__item">
+							<a href="#" class="content-million-page__block-link">
+								<div class="content-million-page__image-ibg"><picture><source data-srcset="img/million-page/avatar-2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/million-page/avatar-2.png" alt="image"></picture></div>
+								<h3 class="content-million-page__headline">Peter Parker</h3>
+							</a>
+							<p class="content-million-page__text">„Das ist wirklich etwas für Millennials. Nicht kompliziert,
+								informativ, aber sauber. Fluid ist auch ein Übergang. Der Investmentmanager tut viel. Jetzt nur
+								noch Avrist, Pinnacle, Simas, Majoris.“</p>
+						</article>
+						<article class="content-million-page__item">
+							<a href="#" class="content-million-page__block-link">
+								<div class="content-million-page__image-ibg"><picture><source data-srcset="img/million-page/avatar-3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/million-page/avatar-3.png" alt="image"></picture></div>
+								<h3 class="content-million-page__headline content-million-page__headline_1">Toney Stark</h3>
+							</a>
+							<p class="content-million-page__text">„Das ist wirklich etwas für Millennials. Nicht kompliziert,
+								informativ, aber sauber. Fluid ist auch ein Übergang. Der Investmentmanager tut viel. Jetzt nur
+								noch Avrist, Pinnacle, Simas, Majoris.“</p>
+						</article>
+					</div>
+					<div class="million-page__bottom">
+						<button class="million-page__button mehr-info-button-four button"></button>
+					</div>
+				</div>
+			</section>
+			<section class="page__abonnieren abonnieren-page">
+				<div class="abonnieren-page__container">
+					<div class="abonnieren-page__left">
+						<div class="abonnieren-page__image-ibg"><img data-src="img/abonnieren-page/picture.svg" alt="image">
+						</div>
+					</div>
+					<div class="abonnieren-page__right right-abonnieren-page">
+						<div class="right-abonnieren-page__body">
+							<h2 class="right-abonnieren-page__title title"></h2>
+							<p class="right-abonnieren-page__text"></p>
+						</div>
+						<form action="#" class="right-abonnieren-page__form form-right-abonnieren-page">
+							<div class="form-right-abonnieren-page__line">
+								<input autocomplete="off" type="text" name="form[name]" data-error="Помилка" placeholder="Vorname" class="form-right-abonnieren-page__input input">
+							</div>
+							<div class="form-right-abonnieren-page__line">
+								<input autocomplete="off" type="text" name="form[Familienname]" data-error="Помилка" placeholder="Familienname" class="form-right-abonnieren-page__input input">
+							</div>
+							<div class="form-right-abonnieren-page__line">
+								<input type="tel" name="form[tel]" data-error="Помилка" placeholder="Telefonnummer" class="form-right-abonnieren-page__input input">
+							</div>
+							<div class="form-right-abonnieren-page__line">
+								<input data-required="email" autocomplete="off" type="email" name="form[email]" data-error="Помилка" placeholder="Email" class="form-right-abonnieren-page__input input">
+							</div>
+							<button type="submit" class="form-right-abonnieren-page__button button"></button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer data-spollers="768,max" class="footer">
+			<div class="footer__top top-footer">
+				<div class="top-footer__container">
+					<div class="top-footer__column top-footer__column_1">
+						<a href="#" class="top-footer__logo">
+							<img src="img/logo-cex-io-footer.svg" alt="Logo">
+						</a>
+						<div class="top-footer__block block-top-footer">
+							<div class="block-top-footer__body">
+								<p class="block-top-footer__label"></p>
+							</div>
+							<div class="block-top-footer__social social">
+								<a href="#" class="social__item  social__item_1"><span class="_icon-s-facebook"></span></a>
+								<a href="#" class="social__item  social__item_2"><span class="_icon-s-twitter"></span></a>
+								<a href="#" class="social__item  social__item_3"><span class="_icon-s-instagram"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="top-footer__column top-footer__column_2">
+						<button type="button" data-spoller class="top-footer__title top-footer__title_1 title-footer _icon-arrow-select"></button>
+						<nav class="top-footer__menu menu-footer">
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item"><a href="#" class="menu-footer__link title-footer title-footer_text"></a></li>
+								<li class="menu-footer__item"><a href="#" class="menu-footer__link title-footer title-footer_text"></a></li>
+								<li class="menu-footer__item"><a href="#" class="menu-footer__link title-footer title-footer_text"></a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="top-footer__column top-footer__column_3">
+						<button type="button" data-spoller class="top-footer__title top-footer__title_2 title-footer _icon-arrow-select"></button>
+						<div class="top-footer__body body-top-footer">
+							<ul class="body-top-footer__list">
+								<li class="body-top-footer__item"><a href="#" class="body-top-footer__link title-footer title-footer_text"></a>
+								</li>
+								<li class="body-top-footer__item"><a href="#" class="body-top-footer__link title-footer title-footer_text"></a></li>
+								<li class="body-top-footer__item"><a href="#" class="body-top-footer__link title-footer title-footer_text"></a>
+								</li>
+								<li class="body-top-footer__item"><a href="#" class="body-top-footer__link title-footer title-footer_text"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="top-footer__column top-footer__column_4">
+						<button type="button" data-spoller class="top-footer__title top-footer__title_3 title-footer _icon-arrow-select"></button>
+						<div class="top-footer__information information-top-footer">
+							<ul class="information-top-footer__list">
+								<li class="information-top-footer__item"><a href="#" class="information-top-footer__link title-footer title-footer_text"></a>
+								</li>
+								<li class="information-top-footer__item"><a href="#" class="information-top-footer__link title-footer title-footer_text"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="top-footer__column top-footer__column_5">
+						<button type="button" data-spoller class="top-footer__title top-footer__title_4 title-footer _icon-arrow-select"></button>
+						<div class="top-footer__app-and-google app-and-google-top-footer">
+							<ul class="app-and-google-top-footer__list">
+								<li class="app-and-google-top-footer__item"><a href="#" class="app-and-google-top-footer__link title-footer title-footer_text"></a></li>
+								<li class="app-and-google-top-footer__item"><a href="#" class="app-and-google-top-footer__link title-footer title-footer_text"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom bottom-footer">
+				<div class="bottom-footer__container">
+					<p class="bottom-footer__text"></p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20230209030601"></script>
+</body>
+
+</html>
